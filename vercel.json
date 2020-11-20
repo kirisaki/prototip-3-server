@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "name": "go",
   "builds": [
     { "src": "*.go", "use": "@vercel/go" },
-    { "src": "/devices/*.go", "use": "@vercel/go" }
+    { "src": "/devices/*.go", "use": "@vercel/go" },
+    { "src": "/device/*.go", "use": "@vercel/go" }
   ],
   "routes": [
+    { "src": "/device/([^/]+)", "dest": "/device?id=$1" },
     { "src": "/devices", "dest": "/devices" }
   ]
 }
