@@ -8,6 +8,7 @@ import (
 )
 
 type Res struct {
+    Id string `json:"id"`
     Detail string `json:"detail"`
 }
 
@@ -18,11 +19,11 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 
     switch id {
     case "a":
-        bytes, _ = json.Marshal(Res{"a dayo"})
+        bytes, _ = json.Marshal(Res{id, "a dayo"})
     case "b":
-        bytes, _ = json.Marshal(Res{"b dayo"})
+        bytes, _ = json.Marshal(Res{id, "b dayo"})
     case "c":
-        bytes, _ = json.Marshal(Res{"c dayo"})
+        bytes, _ = json.Marshal(Res{id, "c dayo"})
     default:
         w.WriteHeader(404)
         bytes, _ = json.Marshal(types.ResError{"not found jai!!"})
