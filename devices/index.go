@@ -7,7 +7,7 @@ import (
 )
 
 type Res struct {
-    Ids []string `json:"ids"`
+    Devices []string `json:"devices"`
 }
 
 func Handler(w http.ResponseWriter, r *http.Request) {
